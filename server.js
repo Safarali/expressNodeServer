@@ -3,6 +3,8 @@ const hbs = require('hbs');
 const hbsutils = require('hbs-utils')(hbs);
 const fs = require('fs');
 
+const port = process.env.PORT || 3000
+
 let app = express();
 
 // Listen to partials
@@ -53,6 +55,6 @@ app.get('/bad', (req, res) => {
         errorMessage: 'Unable to handle request'
     });
 });
-app.listen(3000, () => {
-    console.log('Server is up in 3000 port')
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
