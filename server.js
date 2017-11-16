@@ -50,6 +50,13 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/packages', (req, res) => {
+    res.render('packages.hbs', {
+        pageTitle: "Your packages",
+        numberOfPack: 25
+    })
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Unable to handle request'
